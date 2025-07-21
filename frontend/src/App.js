@@ -6,13 +6,13 @@ function App() {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/tasks").then((res) => {
+    axios.get("https://your-backend.onrender.com/tasks").then((res) => {
       setTasks(res.data);
     });
   }, []);
   const addTask = () => {
     axios
-      .post("http://localhost:5000/tasks", { text })
+      .post("https://your-backend.onrender.com/tasks', ...", { text })
       .then((res) => setTasks([...tasks, res.data]));
     setText("");
   };
